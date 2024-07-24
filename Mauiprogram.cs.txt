@@ -1,0 +1,61 @@
+using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
+using Microsoft.Maui.Controls.Hosting;
+
+namespace FruitGrocery
+{
+    public static class MauiProgram
+    {
+        public static MauiApp CreateMauiApp()
+        {
+            var builder = MauiApp.CreateBuilder();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                });
+
+            return builder.Build();
+        }
+    }
+}
+
+
+
+
+
+----------------------------------------------
+
+// the code with comments explained below
+
+
+
+using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
+using Microsoft.Maui.Controls.Hosting;
+
+namespace FruitGrocery
+{
+    // Static class to create the MauiApp
+    public static class MauiProgram
+    {
+        // Method to create the MauiApp
+        public static MauiApp CreateMauiApp()
+        {
+            // Create the MauiApp builder
+            var builder = MauiApp.CreateBuilder();
+            builder
+                // Use the App class
+                .UseMauiApp<App>()
+                // Configure fonts
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                });
+
+            // Build and return the MauiApp
+            return builder.Build();
+        }
+    }
+}

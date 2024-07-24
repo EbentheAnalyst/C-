@@ -1,0 +1,31 @@
+using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
+using Microsoft.Maui.Controls.Hosting;
+
+namespace FruitGrocery
+{
+    // The MauiProgram class configures and builds the .NET MAUI application.
+    public static class MauiProgram
+    {
+        // CreateMauiApp is responsible for setting up and configuring the app.
+        public static MauiApp CreateMauiApp()
+        {
+            // Creating a builder to configure the app.
+            var builder = MauiApp.CreateBuilder();
+            
+            // UseMauiApp specifies the main application class (App) to use.
+            builder.UseMauiApp<App>()
+            
+                // ConfigureFonts adds custom fonts to the application.
+                .ConfigureFonts(fonts =>
+                {
+                    // Adding OpenSans-Regular.ttf with the alias "OpenSansRegular".
+                    // This allows the font to be used throughout the app by referring to its alias.
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                });
+
+            // Builds and returns the configured MauiApp.
+            return builder.Build();
+        }
+    }
+}

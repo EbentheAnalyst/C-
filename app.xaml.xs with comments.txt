@@ -1,0 +1,19 @@
+using Microsoft.Maui.Controls;
+
+namespace FruitGrocery
+{
+    // The App class is responsible for managing the lifecycle of the application.
+    public partial class App : Application
+    {
+        // Constructor: Initializes the application.
+        public App()
+        {
+            // InitializeComponent initializes the XAML components defined in App.xaml.
+            InitializeComponent();
+            
+            // Setting MainPage to a new instance of NavigationPage containing MainPage.
+            // This makes MainPage the first page of the app, wrapped in a NavigationPage for navigation support.
+            MainPage = new NavigationPage(new MainPage());
+        }
+    }
+}
